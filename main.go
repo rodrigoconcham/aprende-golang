@@ -1,24 +1,33 @@
-package main
+   package main
 
-import (
-	"fmt"
-)
+
+import "fmt"
+
+func decirAdios() string {
+    return "Adios"
+}
 
 
 
 func main() {
 
- for i:=0; i<5; i++ {
-    fmt.Println(i) 
- }
+	despedida :=decirAdios()
+   fmt.Println(despedida)
 
+  divided := divide(1,2)
+  fmt.Println(divided)
+   
 
- nums:=[]int{1,2,3}
- for _, num :=range nums {
-    fmt.Println(num)	
-}
 
 
 	 
 }
 
+func divide(a , b int ) int {
+
+  if b==0  {
+    return 0
+  }
+
+  return a / b 
+}
