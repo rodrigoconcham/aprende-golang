@@ -4,13 +4,19 @@ import (
 	"fmt"
 )
 
-const (
-	A = 1
-	B = 2
-)
+func decirHola() {
+	fmt.Println("Hola!")
+}
 
 func main() {
 
-	fmt.Println(A + B)
+	decirHola()
 
+	suma := add(2, 3)
+
+	fmt.Println(suma)
+}
+
+func add(x, y int) int {
+	return x + y
 }
