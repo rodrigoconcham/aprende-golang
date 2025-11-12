@@ -3,6 +3,8 @@ package main
 import "fmt"
 
 func main() {
-    defer fmt.Println("Esto esta impreso ultimo")
-    fmt.Println("Esto esta impreso primero")
+    for i := 0; i < 3; i++ {
+        defer fmt.Println(i)
+    }
+    fmt.Println("Loop finished")
 }
