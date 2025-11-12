@@ -3,11 +3,10 @@ package main
 import "fmt"
 
 func main() {
-    x := 3
-    switch x {
-    case 1:
-        fmt.Println("One")
-    default:
-        fmt.Println("Not One")
+    for i := 0; i < 5; i++ {
+        if i == 3 {
+            break
+        }
+        fmt.Println(i) // Output: 0, 1, 2
     }
 }
