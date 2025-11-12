@@ -3,8 +3,12 @@ package main
 import "fmt"
 
 func main() {
-    nums := []int{1, 2, 3, 4}
-    for i, num := range nums {
-        fmt.Printf("Index: %d, Value: %d\n", i, num)
+    x := 1
+    switch x {
+    case 1:
+        fmt.Println("Case 1")
+        fallthrough
+    case 2:
+        fmt.Println("Case 2")
     }
 }
