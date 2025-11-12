@@ -2,9 +2,14 @@ package main
 
 import "fmt"
 
+type Celsio float64
+
+func (c Celsio) ToFahrenheit() float64 {
+    return float64(c * 9/5 * 32)
+}
+
 func main() {
-    for i := 0; i < 3; i++ {
-        defer fmt.Println(i)
-    }
-    fmt.Println("Loop finished")
+    temp := Celsio(25)
+    
+    fmt.Println(temp.ToFahrenheit())
 }
