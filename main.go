@@ -3,13 +3,11 @@ package main
 import "fmt"
 
 func main() {
-    day := 3
-    switch day {
-    case 1:
-        fmt.Println("Monday")
-    case 2:
-        fmt.Println("Tuesday")
+    letter := "a"
+    switch letter {
+    case "a", "e", "i", "o", "u":
+        fmt.Println("Vocal")
     default:
-        fmt.Println("Other day")
+        fmt.Println("Consonante")
     }
 }
