@@ -3,15 +3,10 @@ package main
 import "fmt"
 
 func main() {
-    x := 2
-    switch x {
-    case 1:
-        fmt.Println("One")
-    case 2:
-        fmt.Println("Two")
-        break
-    case 3:
-        fmt.Println("Three")
+    for i := 0; i < 5; i++ {
+        if i%2 == 0 {
+            continue
+        }
+        fmt.Println(i) // Output: 1, 3
     }
-    fmt.Println("Switch complete") // Output: Two \n Switch complete
 }
