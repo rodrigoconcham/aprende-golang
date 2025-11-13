@@ -3,10 +3,9 @@ package main
 import "fmt"
 
 func main() {
-    ch := make(chan int)
-    go func() {
-        ch <- 42
-    }()
-    val := <-ch
-    fmt.Println(val) // Output: 42
+    ch := make(chan string, 2)
+    ch <- "Hello"
+    ch <- "World"
+    fmt.Println(<-ch) // Output: Hello
+    fmt.Println(<-ch) // Output: World
 }
