@@ -5,15 +5,16 @@ import (
     "time"
 )
 
-func Saluda() {
-    fmt.Println("Hola desde un goroutine")
+
+func printNumbers(n int) {
+    for i := 1; i <= n; i++ {
+        fmt.Println(i)
+        time.Sleep(100 * time.Millisecond)
+    }
 }
 
 func main() {
-    go Saluda()
-    time.Sleep(time.Second)
-    
-    fmt.Println("main function completed")
+    go printNumbers(5)
+    go printNumbers(5)
+    time.Sleep(time.Second) // Allow time for both goroutines
 }
-
-
