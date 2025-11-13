@@ -1,23 +1,19 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "time"
+)
 
-type Rectangulo struct {
-    Width float64
-    Height float64
-}
-
-func (r Rectangulo) Area() float64 {
-    return r.Width * r.Height
+func Saluda() {
+    fmt.Println("Hola desde un goroutine")
 }
 
 func main() {
-    rect := Rectangulo{
-        Width: 5,
-        Height: 5,
-    }
+    go Saluda()
+    time.Sleep(time.Second)
     
-    fmt.Println(rect.Area()) // Output 25
+    fmt.Println("main function completed")
 }
 
 
