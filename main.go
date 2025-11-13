@@ -2,14 +2,22 @@ package main
 
 import "fmt"
 
-type Celsio float64
+type Rectangulo struct {
+    Width float64
+    Height float64
+}
 
-func (c Celsio) ToFahrenheit() float64 {
-    return float64(c * 9/5 * 32)
+func (r Rectangulo) Area() float64 {
+    return r.Width * r.Height
 }
 
 func main() {
-    temp := Celsio(25)
+    rect := Rectangulo{
+        Width: 5,
+        Height: 5,
+    }
     
-    fmt.Println(temp.ToFahrenheit())
+    fmt.Println(rect.Area()) // Output 25
 }
+
+
