@@ -1,20 +1,12 @@
 package main
 
-import (
-    "fmt"
-    "time"
-)
-
-
-func printNumbers(n int) {
-    for i := 1; i <= n; i++ {
-        fmt.Println(i)
-        time.Sleep(100 * time.Millisecond)
-    }
-}
+import "fmt"
 
 func main() {
-    go printNumbers(5)
-    go printNumbers(5)
-    time.Sleep(time.Second) // Allow time for both goroutines
+    ch := make(chan int)
+    go func() {
+        ch <- 42
+    }()
+    val := <-ch
+    fmt.Println(val) // Output: 42
 }
