@@ -2,20 +2,15 @@ package main
 
 import  (
       "fmt"
-      "time")
+  )
+
 
 func main() {
-    ch := make(chan string)
-    
-    go func() {
-        time.Sleep(2 * time.Second)
-        ch <- "Done"
-    }()
-    
-    select {
-    case msg := <-ch:
-        fmt.Println(msg)
-    case <-time.After(1 * time.Second):
-        fmt.Println("Timeout!")
+    m := map[string]int{"manzana": 2, "banana": 3}
+    fmt.Println(m["manzana"]) // Output: 2
+  
+    for key, value := range m {
+        fmt.Printf("key es: %s; value es: %d", key, value)
     }
+
 }
