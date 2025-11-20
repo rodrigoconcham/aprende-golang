@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	slice := []int{1, 2, 3}
-	slice = append(slice, 4, 5)
-	fmt.Println(slice) // Output: [1 2 3 4 5]
+	arr := [5]int{10, 20, 30, 40, 50}
+	slice := arr[1:4]
+	fmt.Println(slice) // Output: [20 30 40]
 }
