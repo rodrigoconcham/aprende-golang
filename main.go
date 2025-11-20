@@ -3,9 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	arr := [3]string{"Go", "Rust", "Python"}
-
-	for i, v := range arr {
-		fmt.Printf("Index %d: %s\n", i, v)
-	}
+	slice := []int{1, 2, 3}
+	slice = append(slice, 4, 5)
+	fmt.Println(slice) // Output: [1 2 3 4 5]
 }
