@@ -2,9 +2,14 @@ package main
 
 import "fmt"
 
+type Person struct {
+	Name string
+	Age  int
+}
+
 func main() {
-	m := make(map[string]int)
-	m["apple"] = 2
-	m["banana"] = 3
-	fmt.Println(m["apple"]) // Output: 2
+	p := Person{Name: "Alice", Age: 30}
+	nombre := p.Name
+	fmt.Println(nombre) // "Alice"
+	fmt.Println(p)      // Output: {Alice 30}
 }
