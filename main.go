@@ -2,14 +2,9 @@ package main
 
 import "fmt"
 
-type Person struct {
-	Name string
-	Age  int
-}
-
 func main() {
-	p := Person{Name: "Alice", Age: 30}
-	nombre := p.Name
-	fmt.Println(nombre) // "Alice"
-	fmt.Println(p)      // Output: {Alice 30}
+	x := 10
+	p := &x
+	fmt.Println(p)  // Salida: Dirección de memoria de x (ej: 0xc000014088)
+	fmt.Println(*p) // Salida: 10
 }
