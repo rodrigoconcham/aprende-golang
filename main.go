@@ -2,12 +2,10 @@ package main
 
 import "fmt"
 
-func imprimirCualquierCosa(v interface{}) {
-	fmt.Println(v)
-}
-
 func main() {
-	imprimirCualquierCosa(42)
-	imprimirCualquierCosa("hola")
-	imprimirCualquierCosa(3.14)
+	fmt.Println("Antes de goto")
+	goto End
+	fmt.Println("Esto no se ejecutara")
+End:
+	fmt.Println("Despues goto")
 }
