@@ -3,10 +3,13 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"sync"
 	"time"
 )
 
-func fetchURL(url string) {
+func fetchURL(url string, wg *sync.WaitGroup) {
+	defer wg.Done()
+
 	start := time.Now()
 
 	resp, err := http.Get(url)
@@ -30,12 +33,16 @@ func main() {
 	}
 
 	start := time.Now()
+	var wg sync.WaitGroup
 
 	for _, url := range urls {
-		fetchURL(url)
+		wg.Add(1)
+		go fetchURL(url, &wg)
 	}
 
+	wg.Wait()
+
 	duracionTotal := time.Since(start)
-	fmt.Printf("Tiempo total de la secuencia: %v\n", duracionTotal)
+	fmt.Printf("Tiempo total concurrente: %v\n", duracionTotal)
 
 }
